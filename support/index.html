@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Amphora Support</title>
+<meta name="description" content="Help with connecting Amphora to your car, purchases, and contact details.">
+<link rel="icon" href="../assets/icon.png">
+<link rel="apple-touch-icon" href="../assets/icon.png">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../"><img src="../assets/icon.png" alt="">Amphora</a>
+<nav><a href="../support/" aria-current="page">Support</a><a href="../privacy/">Privacy</a><a href="../terms/">Terms</a></nav>
+</div></header>
+<main><div class="wrap">
+<h1>Support</h1>
+<p class="lede">Help with connecting to your car, purchases and anything else.</p>
+
+<h2>Contact</h2>
+<p>Report a problem or ask a question by <a href="https://github.com/colinbm/amphora-public/issues">opening an issue on GitHub</a>. Please include your car's model and year, your adapter, and your iOS version. If it's a connection problem, the log from Settings → Adapter log helps a lot.</p>
+
+<h2>Common questions</h2>
+
+<h3>Which adapter should I buy?</h3>
+<p>Any ELM327-compatible OBD-II adapter that uses Bluetooth LE (Bluetooth 4.0 or later) or Wi-Fi. vLinker adapters work well. Adapters that only support classic Bluetooth (often sold for Android) won't work with iPhone.</p>
+
+<h3>Amphora can't find my adapter</h3>
+<p>Plug the adapter into the car's OBD port and switch the car on (ready mode is best). Then choose it in Settings → Adapter. Adapters often appear as OBDII, vLinker, IOS-Vlink or similar. Don't pair it in iOS Settings → Bluetooth: Amphora connects to it directly. Make sure Amphora has Bluetooth access in iOS Settings → Privacy &amp; Security → Bluetooth.</p>
+
+<h3>I'm using a Wi-Fi adapter</h3>
+<p>Join the adapter's Wi-Fi network in iOS Settings, then choose Wi-Fi in Amphora's Settings and check the address and port (usually 192.168.0.10, port 35000). Allow Amphora local network access when asked.</p>
+
+<h3>The readings look wrong</h3>
+<p>Check the model chosen for your car in Settings → Your cars. Amphora suggests one from the VIN, but some years and regions use different batteries. Hyundai and Kia support is experimental; if your figures look off, please report them.</p>
+
+<h3>Amphora couldn't read my car's VIN</h3>
+<p>Try reconnecting. A single-car unlock is tied to the VIN, so a car whose VIN can't be read can only be unlocked with Fleet.</p>
+
+<h3>How do I restore a purchase?</h3>
+<p>Purchases follow your Apple Account. On a new phone, or after reinstalling, tap Restore purchases in Settings. Fleet can be shared with your family through Family Sharing.</p>
+
+<h3>How do I get a refund?</h3>
+<p>Refunds are handled by Apple. Request one at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
+
+<h3>Is it safe to use while driving?</h3>
+<p>Amphora only reads data and never changes anything in the car. Don't use your phone while driving: check your battery when parked or let a passenger do it.</p>
+</div></main>
+<footer class="site"><div class="wrap">
+<span>© 2026 Colin Burn-Murdoch</span>
+<nav><a href="../support/" aria-current="page">Support</a><a href="../privacy/">Privacy</a><a href="../terms/">Terms</a></nav>
+</div></footer>
+</body>
+</html>
