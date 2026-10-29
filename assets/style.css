@@ -43,6 +43,10 @@ h3 { font-size: 17px; margin: 24px 0 4px; }
 .hero { text-align: center; padding-top: 16px; }
 .hero img { width: 128px; height: 128px; border-radius: 28px; box-shadow: 0 10px 30px rgba(0,0,0,.18); }
 .hero h1 { font-size: 44px; margin-top: 24px; }
+.hero { margin-bottom: 32px; }
+.hero .lede { margin-bottom: 20px; }
+.badge { display: inline-flex; flex-direction: column; align-items: flex-start; background: var(--text); color: var(--bg); border-radius: 12px; padding: 7px 20px 8px; font-size: 20px; font-weight: 600; line-height: 1.1; cursor: default; user-select: none; }
+.badge small { font-size: 11px; font-weight: 500; letter-spacing: .02em; opacity: .75; }
 .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 32px 0; }
 .card { background: var(--surface); border-radius: 16px; padding: 18px 20px; }
 .card h3 { margin: 0 0 4px; }
