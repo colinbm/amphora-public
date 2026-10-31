@@ -117,7 +117,7 @@
       // Mailchimp's messages can contain HTML and a leading "0 - "; show plain text.
       var tmp = document.createElement('div');
       tmp.innerHTML = String(data.msg || '').replace(/^\d+ - /, '');
-      done(ok, ok ? 'Thanks! Check your inbox to confirm.' : tmp.textContent);
+      done(ok, ok ? 'Thanks! We\'ll email you when Amphora is out.' : tmp.textContent);
     };
     script.onerror = function () { done(false, 'Something went wrong. Please try again.'); };
     script.src = form.action.replace('/post?', '/post-json?') + '&' + new URLSearchParams(new FormData(form)) + '&c=' + cb;
