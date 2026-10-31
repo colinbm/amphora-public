@@ -34,7 +34,7 @@
 <p class="lede">Help with connecting to your car, purchases and anything else.</p>
 
 <h2>Contact</h2>
-<p>Email <a href="mailto:colin@burn-murdoch.com?subject=Amphora%20support">colin@burn-murdoch.com</a>, or <a href="https://github.com/colinbm/amphora-public/issues">open an issue on GitHub</a>. Please include your car's model and year, your adapter, and your iOS version. If it's a connection problem, the log from Settings → Adapter log helps a lot.</p>
+<p>Email <a href="mailto:colin@burn-murdoch.com?subject=Amphora%20support">colin@burn-murdoch.com</a>, or <a href="https://github.com/colinbm/amphora-public/issues">open an issue on GitHub</a>. Please include your car's model and year. The easiest way to send the details is Settings → Diagnostics → Send diagnostics: it adds your adapter, iOS version, the car's replies and the adapter log. The last six characters of your VIN, which identify your car, are left out.</p>
 
 <h2>Common questions</h2>
 
@@ -48,13 +48,19 @@
 <p>Join the adapter's Wi-Fi network in iOS Settings, then choose Wi-Fi in Amphora's Settings and check the address and port (usually 192.168.0.10, port 35000). Allow Amphora local network access when asked.</p>
 
 <h3>The readings look wrong</h3>
-<p>Check the model chosen for your car in Settings → Your cars. Amphora suggests one from the VIN, but some years and regions use different batteries. Hyundai and Kia support is experimental; if your figures look off, please report them.</p>
+<p>Check the model chosen for your car in Settings → Your cars. Amphora suggests one from the VIN, but some years and regions use different batteries. Hyundai and Kia support is experimental; if your figures look off, please send diagnostics from Settings → Diagnostics.</p>
+
+<h3>Can I help Amphora support my car better?</h3>
+<p>Yes. With the car parked and switched on (ready mode), go to Settings → Diagnostics → ECU scan. It reads the data blocks from every control unit in the car (it only reads, and changes nothing) and takes a few minutes. Note what the dashboard shows for charge and range at the time, then send diagnostics with the scan included.</p>
+
+<h3>Does Amphora stay connected?</h3>
+<p>Once you've tapped Connect, Amphora reconnects whenever the car is switched back on or you come back to the app, until you tap Disconnect. You can turn this off in Settings → Monitoring. iPhone pauses apps in the background, so Amphora reads the car while it's open.</p>
 
 <h3>Amphora couldn't read my car's VIN</h3>
-<p>Try reconnecting. A single-car unlock is tied to the VIN, so a car whose VIN can't be read can only be unlocked with Fleet.</p>
+<p>Make sure the car is switched on (ready mode). Amphora keeps asking for the VIN while it's connected, so it usually arrives within a few seconds. A single-car unlock is tied to the VIN, so a car whose VIN can't be read can only be unlocked with Fleet.</p>
 
 <h3>How do I restore a purchase?</h3>
-<p>Purchases follow your Apple Account. On a new phone, or after reinstalling, tap Restore purchases in Settings. Fleet can be shared with your family through Family Sharing.</p>
+<p>Purchases follow your Apple Account and come back by themselves on a new phone or after reinstalling. If a car you've unlocked still asks to be unlocked, tap Restore purchases on that screen. Fleet can be shared with your family through Family Sharing.</p>
 
 <h3>How do I get a refund?</h3>
 <p>Refunds are handled by Apple. Request one at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
