@@ -35,6 +35,16 @@
 <h1>Amphora</h1>
 <p class="lede">Know the health of your plug-in hybrid's battery, cell by cell.</p>
 <span class="badge" aria-disabled="true"><svg class="apple" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg><span class="txt"><small>Coming soon</small>for iPhone</span></span>
+<form class="signup" action="https://app.us17.list-manage.com/subscribe/post?u=1e6b61636f84f77d3ae39d0c8&amp;id=9b4d157165&amp;f_id=006d29e1f0" method="post" target="_blank">
+<p>Get an email when Amphora is out.</p>
+<div class="row">
+<label class="vh" for="signup-email">Email address</label>
+<input type="email" name="EMAIL" id="signup-email" placeholder="you@example.com" autocomplete="email" required>
+<button type="submit">Notify me</button>
+</div>
+<div class="hp" aria-hidden="true"><input type="text" name="b_1e6b61636f84f77d3ae39d0c8_9b4d157165" tabindex="-1" value=""></div>
+<p class="status" role="status"></p>
+</form>
 </section>
 
 <p>Amphora reads the high-voltage battery of your Mitsubishi, Hyundai or Kia plug-in hybrid through an ELM327 OBD adapter and shows how much capacity it has left, how every cell is doing, and how it changes over time.</p>
@@ -84,5 +94,39 @@
 <span>© 2026 Colin Burn-Murdoch</span>
 <nav><a href="support/">Support</a><a href="privacy/">Privacy</a><a href="terms/">Terms</a></nav>
 </div></footer>
+<script>
+// Submit to Mailchimp's JSONP endpoint so the reply shows inline; without JS the form posts in a new tab.
+(function () {
+  var form = document.querySelector('form.signup');
+  var status = form.querySelector('.status');
+  var button = form.querySelector('button');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var cb = 'mc' + Date.now();
+    var script = document.createElement('script');
+    var done = function (ok, msg) {
+      delete window[cb];
+      script.remove();
+      button.disabled = false;
+      status.className = 'status ' + (ok ? 'ok' : 'err');
+      status.textContent = msg;
+      if (ok) form.reset();
+    };
+    window[cb] = function (data) {
+      var ok = data.result === 'success';
+      // Mailchimp's messages can contain HTML and a leading "0 - "; show plain text.
+      var tmp = document.createElement('div');
+      tmp.innerHTML = String(data.msg || '').replace(/^\d+ - /, '');
+      done(ok, ok ? 'Thanks! Check your inbox to confirm.' : tmp.textContent);
+    };
+    script.onerror = function () { done(false, 'Something went wrong. Please try again.'); };
+    script.src = form.action.replace('/post?', '/post-json?') + '&' + new URLSearchParams(new FormData(form)) + '&c=' + cb;
+    button.disabled = true;
+    status.className = 'status';
+    status.textContent = '';
+    document.body.appendChild(script);
+  });
+})();
+</script>
 </body>
 </html>
